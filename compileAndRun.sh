@@ -27,9 +27,10 @@ do
   esac
 done
 
-if [ -z "$JAVA_FILE" ]
+if [ ! "$JAVA_FILE" ]
 then
-  printUsage "Usage error - Option -j is required"
+  printUsage "Usage error - Option -j is required" 1>&2
+  exit 1
 fi
 
 CLASS_NAME=$(sed -r 's:([a-zA-Z0-9]+)\.java$:\1:' <<< "$JAVA_FILE" | tr '/' '.')
