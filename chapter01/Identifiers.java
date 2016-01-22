@@ -1,6 +1,6 @@
 package chapter01;
 
-class Identifiers
+public class Identifiers
 {
   public static void main(String [] args){
     // Fix the identifiers
