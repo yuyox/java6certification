@@ -5,7 +5,10 @@ I would like to create a repo where people can download this and practice the di
 I will follow the order of the book 'Sun Certified Programer for Java 6 Study Guide' by Kathy Sierra and Bert Bates
 
 Examples on how to run:
-./compileAndRun.sh -j chapter01/Identifiers.java
+If there is a Main file in that directory, always compile that file
+./compileAndRun.sh -j "chapter01/classAccessModifier/"
+If there is no Main file, you can compile it directly
+./compileAndRun.sh -j "chapter01/Identifiers.java"
 
 There are different exercises:
 1- You need to fix the .java because it doesn't compile

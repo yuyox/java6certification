@@ -1,4 +1,5 @@
 #!/bin/bash
+#set -x
 
 BASE_DIR=$(dirname $0)
 DEFAULT_TARGET_DIR=$BASE_DIR/target
@@ -33,7 +34,23 @@ then
   exit 1
 fi
 
-CLASS_NAME=$(sed -r 's:([a-zA-Z0-9]+)\.java$:\1:' <<< "$JAVA_FILE" | tr '/' '.')
+JAVA_FILE=$(find $JAVA_FILE -maxdepth 1 -type f)
+
+for FILE in $JAVA_FILE
+do
+  CLASS_NAME+="$(sed -r 's:([a-zA-Z0-9]+)\.java$:\1:g' <<< "$FILE" | tr '/' '.') "
+done
+
+if [ $(grep -o " " <<< "$CLASS_NAME" | wc -l) -gt 1 ]
+then
+  CLASS_NAME=$(egrep -o '[a-zA-Z0-9.]*Main' <<< "$CLASS_NAME")
+fi
+
+if [ ! "$CLASS_NAME" ]
+then
+  printUsage "No Main class found, please refer to the README.md" 1>&2
+  exit 1
+fi
 
 mkdir -p $TARGET_DIR
 

@@ -3,9 +3,7 @@ import java.lang.Math;
 package chapter01;
 
 public class ClassDeclaration {
-  public static void main(String [] args) {
-    System.out.println("This file compiles if you can fix it");
-  }
+  public static void main(String [] args) {}
 }
 
 // Creating just a random class
