@@ -22,7 +22,7 @@ function printUsage
 function listClasses
 {
   cd $BASE_DIR
-  ls -1 */*.java
+  find chapters -name \*.java -print
 }
 
 while getopts j:t:lh OPT
