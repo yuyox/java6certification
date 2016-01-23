@@ -6,9 +6,9 @@ I will follow the order of the book 'Sun Certified Programer for Java 6 Study Gu
 
 Examples on how to run:
 If there is a Main file in that directory, always compile that file
-./compileAndRun.sh -j "chapter01/classAccessModifier/"
+./compileAndRun.sh -j chapters/chapter01/classAccessModifier/Main.java
 If there is no Main file, you can compile it directly
-./compileAndRun.sh -j "chapter01/Identifiers.java"
+./compileAndRun.sh -j chapters/chapter01/Identifiers.java
 
 There are different exercises:
 1- You need to fix the .java because it doesn't compile

@@ -1,4 +1,4 @@
-package chapter01;
+package chapters.chapter01;
 
 public class Identifiers
 {

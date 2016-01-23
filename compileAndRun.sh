@@ -15,14 +15,22 @@ function printUsage
   echo "$(basename $0) - [OPTIONS]"
   echo " j <path/file.java>  : Java class to compile and run (REQUIRED)"
   echo " t <path>            : Target directory (deafult:$DEFAULT_TARGET_DIR)"
+  echo " l                   : List all the available classes"
   echo " h                   : Usage"
 }
 
-while getopts j:t:h OPT
+function listClasses
+{
+  cd $BASE_DIR
+  ls -1 */*.java
+}
+
+while getopts j:t:lh OPT
 do
   case $OPT in
     (j)  JAVA_FILE="$OPTARG";;
     (t)  TARGET_DIR="$OPTARG";;
+    (l)  listClasses;exit 0;;
     (h)  printUsage;exit 0;; 
     (?)  printUsage;exit 1;; 
   esac

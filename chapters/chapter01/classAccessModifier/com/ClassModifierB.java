@@ -1,4 +1,4 @@
-package chapter01.classAccessModifier.com;
+package chapters.chapter01.classAccessModifier.com;
 
 class ClassModifierB {
   ClassModifierB mod;

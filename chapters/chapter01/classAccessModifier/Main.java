@@ -1,6 +1,6 @@
-package chapter01.classAccessModifier;
+package chapters.chapter01.classAccessModifier;
 
-import chapter01.classAccessModifier.com.*;
+import chapters.chapter01.classAccessModifier.com.*;
 
 public class Main{
   ClassModifierA modA;

@@ -1,6 +1,6 @@
 import java.lang.Math;
 
-package chapter01;
+package chapters.chapter01;
 
 public class ClassDeclaration {
   public static void main(String [] args) {}
